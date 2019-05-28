@@ -10,6 +10,12 @@ obsutil is a command line tool for accessing Object Storage Service (OBS). You c
 
 4. 设置操作系统平台编译参数后， 运行go install obsutil执行编译；
 
+# Download
+Windows: https://github.com/chewaiwai/obsutil/raw/master/release/obsutil_windows_amd64.zip
+
+Linux: https://github.com/chewaiwai/obsutil/raw/master/release/obsutil_linux_amd64.tar.gz
+
+MacOS: https://github.com/chewaiwai/obsutil/raw/master/release/obsutil_darwin_amd64.tar.gz
 
 # Quickstart
 
