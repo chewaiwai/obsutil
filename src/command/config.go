@@ -15,9 +15,9 @@ import (
 	"strings"
 )
 
-const (
-	aesKey = "mockkey123456789"
-	aesIv  = "mockiv0123456789"
+var (
+	aesKey = "not set"
+	aesIv  = "not set"
 )
 
 var configFile string
@@ -27,7 +27,9 @@ var config map[string]string
 var createDefaultConfigFile = false
 var defaultConfig map[string]string
 
-func GetDefaultConfig() map[string]string {
+func GetDefaultConfig(_AesKey, _AesIv string) map[string]string {
+	aesKey = _AesKey
+	aesIv = _AesIv
 	if defaultConfig != nil {
 		return defaultConfig
 	}
@@ -194,7 +196,7 @@ func readConfigFile() (map[string]string, error) {
 		}
 	}
 
-	for k, v := range GetDefaultConfig() {
+	for k, v := range GetDefaultConfig(aesKey, aesIv) {
 		if _, ok := kv[k]; !ok {
 			kv[k] = v
 		}
