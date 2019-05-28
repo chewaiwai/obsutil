@@ -1,20 +1,22 @@
 package assist
 
-import (
-	"os"
-)
+var cloudType = "hec"
 
-const cloudType = "CLOUDTYPE"
+func SetCloudType(c string) {
+	if c != "" {
+		cloudType = c
+	}
+}
 
 func IsHec() bool {
-	t := os.Getenv(cloudType)
-	return t == "hec" || t == ""
+	return cloudType == "hec"
 }
 
 func IsDt() bool {
-	return os.Getenv(cloudType) == "dt"
+	return cloudType == "dt"
 }
 
 func IsOtc() bool {
-	return os.Getenv(cloudType) == "otc"
+	return cloudType == "otc"
 }
+
