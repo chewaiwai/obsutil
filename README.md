@@ -2,13 +2,11 @@
 obsutil is a command line tool for accessing Object Storage Service (OBS). You can use this tool to perform common configurations in OBS, such as creating buckets, uploading and downloading files/folders, and deleting files/folders. If you are familiar with command line interface (CLI), obsutil is recommended as an optimal tool for batch processing and automated tasks.
 
 # Compile
-1. Download the code to your local PC (for example, the /xxx/obsutil directory) and prepare the Go development environment.
+1. Download the code to your local PC (for example, the `/xxx/obsutil` directory) and prepare the Go development environment.
 
-2. Modify the src/command/config.go file. Change the values of aesKey and aesIv to customized private key character strings. (Note: The length of a customized character string must be 16 characters.)
+2. Set the parent directory of src to the path of GO_PATH. For example, `export GOPATH=/xxx/obsutil`.
 
-3. Set the parent directory of src to the path of GO_PATH. For example, export GOPATH=/xxx/obsutil.
-
-4. After setting the compilation parameters for your operating system, run the go install obsutil command to perform compilation.
+3. After setting the compilation parameters for your operating system, run the `go install -ldflags "-X main.AesKey=YourCustomizeKey -X main.AesIv=YourCustomizedIv" obsutil` command to perform compilation. (Note: Both the length of the customized character strings `YourCustomizeKey` and `YourCustomizedIv` must be 16 characters.)
 
 
 # Download
