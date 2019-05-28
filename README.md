@@ -22,7 +22,7 @@ MacOS: https://github.com/chewaiwai/obsutil/raw/master/release/obsutil_darwin_am
 
 Usage: obsutil [command] [args...] [options...]
 
-You can use "obsutil help command" to view the specific help of each command
+You can use "obsutil help" to view the specific help of each command
 
 Basic commands:
 
