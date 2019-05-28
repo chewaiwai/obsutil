@@ -164,8 +164,8 @@ func setCurrentLanguage() {
 	i18n.SetCurrentLanguage(strings.ToLower(config["helpLanguage"]))
 }
 
-func Run() {
-	if err := InitConfigFile(GetDefaultConfig(), true); err == nil {
+func Run(AesKey, AesIv string) {
+	if err := InitConfigFile(GetDefaultConfig(AesKey, AesIv), true); err == nil {
 		var exitErr error
 		i18n.SetI18nStrings()
 		setCurrentLanguage()
