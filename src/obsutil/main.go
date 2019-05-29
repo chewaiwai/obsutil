@@ -7,8 +7,8 @@ import (
 )
 
 var (
-	AesKey    = "not set"
-	AesIv     = "not set"
+	AesKey    = ""
+	AesIv     = ""
 	CloudType = ""
 )
 
