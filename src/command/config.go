@@ -16,8 +16,8 @@ import (
 )
 
 var (
-	aesKey = "not set"
-	aesIv  = "not set"
+	aesKey = "mockaeskey123456"
+	aesIv  = "mockaesiv0123456"
 )
 
 var configFile string
@@ -27,9 +27,15 @@ var config map[string]string
 var createDefaultConfigFile = false
 var defaultConfig map[string]string
 
-func GetDefaultConfig(_AesKey, _AesIv string) map[string]string {
-	aesKey = _AesKey
-	aesIv = _AesIv
+func GetDefaultConfig(_aesKey, _aesIv string) map[string]string {
+	if _aesKey != ""{
+		aesKey = _aesKey
+	}
+	
+	if _aesIv != ""{
+		aesIv = _aesIv
+	}
+	
 	if defaultConfig != nil {
 		return defaultConfig
 	}
